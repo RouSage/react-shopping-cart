@@ -1,6 +1,7 @@
 {
   "name": "react-shopping-cart",
   "version": "1.0.0",
+  "private": "true",
   "description": "A small shopping cart SPA built with React and Redux",
   "main": "index.js",
   "scripts": {
