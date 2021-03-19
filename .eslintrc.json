@@ -19,7 +19,8 @@
             "jsx": true
         },
         "ecmaVersion": 12,
-        "sourceType": "module"
+        "sourceType": "module",
+        "requireConfigFile": false
     },
     "settings": {
         "import/resolver": {
@@ -40,6 +41,10 @@
         "prettier"
     ],
     "rules": {
+        "eqeqeq": [
+            "error",
+            "always"
+        ],
         "prettier/prettier": "error",
         "react/jsx-filename-extension": [
             1,
