@@ -5,9 +5,13 @@
         "es2020": true
     },
     "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
         "plugin:react/recommended",
-        "airbnb",
-        "prettier"
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended"
     ],
     "parser": "@babel/eslint-parser",
     "parserOptions": {
@@ -17,8 +21,22 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "src"
+                ],
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        }
+    },
     "plugins": [
         "react",
+        "jsx-a11y",
         "prettier"
     ],
     "rules": {
