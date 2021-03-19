@@ -6,7 +6,6 @@ const Books = () => {
   const { items: books, isLoading } = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  // TODO: Change eslint config from airbnb to CRA (https://www.npmjs.com/package/eslint-config-react-app)
   useEffect(() => {
     dispatch(fetchBooks());
   }, []);
