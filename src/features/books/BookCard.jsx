@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Button, Card, Icon, Image } from 'semantic-ui-react';
 
-const BookCard = ({ title, author, price, image }) => {
+const BookCard = ({ book, onAddToCart }) => {
+  const { title, author, price, image } = book;
+
+  const onButtonClick = (book) => {
+    onAddToCart(book);
+  };
+
   return (
     <Card as="article" raised>
       <Image src={image} wrapped ui={false} alt={title} />
@@ -16,15 +22,27 @@ const BookCard = ({ title, author, price, image }) => {
         <Icon name="dollar" />
         <b>{price}</b>
       </Card.Content>
+      <Button
+        primary
+        icon
+        labelPosition="right"
+        onClick={() => onButtonClick(book)}
+      >
+        Add to Cart
+        <Icon name="shopping cart" />
+      </Button>
     </Card>
   );
 };
 
 BookCard.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
-  price: PropTypes.number,
-  image: PropTypes.string,
+  book: PropTypes.shape({
+    title: PropTypes.string,
+    author: PropTypes.string,
+    price: PropTypes.number,
+    image: PropTypes.string,
+  }).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
-export default BookCard;
+export default React.memo(BookCard);
