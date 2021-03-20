@@ -1,16 +1,16 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Divider } from 'semantic-ui-react';
 import Filter from './components/Filter';
-import MenuComponent from './components/Menu';
+import Layout from './components/Layout';
 import Books from './features/books/Books';
 
 const App = () => {
   return (
-    <Container>
-      <MenuComponent />
+    <Layout>
       <Filter />
+      <Divider />
       <Books />
-    </Container>
+    </Layout>
   );
 };
 

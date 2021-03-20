@@ -13,7 +13,7 @@ const Filter = () => {
   };
 
   return (
-    <Menu secondary>
+    <Menu secondary stackable compact>
       <Menu.Item
         name={filterItems.all}
         active={filterBy === filterItems.all}

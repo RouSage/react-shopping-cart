@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 
-const MenuComponent = () => {
+const Header = () => {
   return (
     <Menu as="header">
       <Menu.Item name="book-store">Book Store</Menu.Item>
@@ -15,4 +15,4 @@ const MenuComponent = () => {
   );
 };
 
-export default MenuComponent;
+export default Header;
