@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card } from 'semantic-ui-react';
 import BookCard from './BookCard';
-import { fetchBooks } from './booksSlice';
+import { fetchBooks, selectBooks } from './booksSlice';
 
 const Books = () => {
-  const { items: books, isLoading } = useSelector((state) => state.books);
+  const { items: books, isLoading } = useSelector(selectBooks);
   const dispatch = useDispatch();
 
   useEffect(() => {
