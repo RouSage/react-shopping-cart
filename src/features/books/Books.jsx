@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card } from 'semantic-ui-react';
-import { addItem } from '../cart/cartSlice';
+import { addItem, selectEachItemCount } from '../cart/cartSlice';
 import BookCard from './BookCard';
 import { fetchBooks, selectBooks } from './booksSlice';
 
 const Books = () => {
   const { items: books, isLoading } = useSelector(selectBooks);
+  const eachBookCount = useSelector(selectEachItemCount);
   const dispatch = useDispatch();
 
   const onAddToCart = useCallback(
@@ -26,7 +27,12 @@ const Books = () => {
         <p>Loading</p>
       ) : (
         books.map((book) => (
-          <BookCard key={book.id} book={book} onAddToCart={onAddToCart} />
+          <BookCard
+            key={book.id}
+            book={book}
+            countInCart={eachBookCount[book.id]}
+            onAddToCart={onAddToCart}
+          />
         ))
       )}
     </Card.Group>

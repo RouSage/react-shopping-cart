@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Button, Card, Icon, Image } from 'semantic-ui-react';
 
-const BookCard = ({ book, onAddToCart }) => {
+const BookCard = ({ book, countInCart, onAddToCart }) => {
   const { title, author, price, image } = book;
 
   return (
@@ -24,7 +24,7 @@ const BookCard = ({ book, onAddToCart }) => {
         labelPosition="right"
         onClick={() => onAddToCart(book)}
       >
-        Add to Cart
+        Add to Cart {countInCart > 0 && `(${countInCart})`}
         <Icon name="shopping cart" />
       </Button>
     </Card>
@@ -38,6 +38,7 @@ BookCard.propTypes = {
     price: PropTypes.number,
     image: PropTypes.string,
   }).isRequired,
+  countInCart: PropTypes.number,
   onAddToCart: PropTypes.func.isRequired,
 };
 

@@ -26,6 +26,18 @@ export const selectCartItemsCount = createSelector(
 export const selectTotal = createSelector(selectCartItems, (items) =>
   items.reduce((total, item) => total + item.price, 0)
 );
+// Create an object that has the id of each item (in cart) as a key
+// and how many items there are with this id as a value
+export const selectEachItemCount = createSelector(selectCartItems, (items) => {
+  let obj = {};
+  items.map((item) => {
+    obj = obj[item.id]
+      ? { ...obj, [item.id]: (obj[item.id] += 1) }
+      : { ...obj, [item.id]: 1 };
+  });
+
+  return obj;
+});
 
 export const { addItem, removeItem } = cartSlice.actions;
 
