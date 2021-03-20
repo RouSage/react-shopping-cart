@@ -5,10 +5,6 @@ import { Button, Card, Icon, Image } from 'semantic-ui-react';
 const BookCard = ({ book, onAddToCart }) => {
   const { title, author, price, image } = book;
 
-  const onButtonClick = (book) => {
-    onAddToCart(book);
-  };
-
   return (
     <Card as="article" raised>
       <Image src={image} wrapped ui={false} alt={title} />
@@ -26,7 +22,7 @@ const BookCard = ({ book, onAddToCart }) => {
         primary
         icon
         labelPosition="right"
-        onClick={() => onButtonClick(book)}
+        onClick={() => onAddToCart(book)}
       >
         Add to Cart
         <Icon name="shopping cart" />
