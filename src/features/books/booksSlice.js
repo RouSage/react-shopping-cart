@@ -1,6 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import orderBy from 'lodash/orderBy';
+import { filterItems } from '../../app/config';
 
+// Create the thunk to fetch books via API asynchronously
+// Used as 'extraReducers' in books reducer
 export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
   async (_arg, { getState, requestId }) => {
@@ -15,9 +19,26 @@ export const fetchBooks = createAsyncThunk(
   }
 );
 
+// Sort books using lodash orderBy method
+const filterBooksBy = (books, filterBy) => {
+  switch (filterBy) {
+    case filterItems.all:
+      return orderBy(books, 'id', 'asc');
+    case filterItems.author:
+      return orderBy(books, 'author', 'asc');
+    case filterItems.price_desc:
+      return orderBy(books, 'price', 'desc');
+    case filterItems.price_asc:
+      return orderBy(books, 'price', 'asc');
+    default:
+      return books;
+  }
+};
+
 const initialState = {
   isLoading: false,
   items: [],
+  filterBy: filterItems.all,
   currentRequestId: undefined,
   error: null,
 };
@@ -25,16 +46,28 @@ const initialState = {
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    filterBooks: (state, action) => {
+      const { payload } = action;
+
+      if (payload !== state.filterBy) {
+        state.filterBy = payload;
+        state.items = filterBooksBy(state.items, state.filterBy);
+      }
+    },
+  },
   extraReducers: {
     [fetchBooks.pending]: (state, action) => {
+      const { requestId } = action.meta;
+
       if (!state.isLoading) {
         state.isLoading = true;
-        state.currentRequestId = action.meta.requestId;
+        state.currentRequestId = requestId;
       }
     },
     [fetchBooks.fulfilled]: (state, action) => {
       const { requestId } = action.meta;
+
       if (state.isLoading && state.currentRequestId === requestId) {
         state.isLoading = false;
         state.items = action.payload;
@@ -43,6 +76,7 @@ export const booksSlice = createSlice({
     },
     [fetchBooks.rejected]: (state, action) => {
       const { requestId } = action.meta;
+
       if (state.isLoading && state.currentRequestId === requestId) {
         state.isLoading = false;
         state.error = action.error;
@@ -54,5 +88,8 @@ export const booksSlice = createSlice({
 
 // Selectors
 export const selectBooks = (state) => state.books;
+export const selectFilterBy = (state) => state.books.filterBy;
+
+export const { filterBooks } = booksSlice.actions;
 
 export default booksSlice.reducer;
