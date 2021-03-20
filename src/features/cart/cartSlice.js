@@ -1,5 +1,15 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
+/**
+ * TODO: maybe would be better to change cart slice structure to:
+ * * id: {
+ * *   item: book
+ * *   count: count
+ * * }
+ * ? Cart will contain only one book object (identified by id)
+ * ? along with count property and there will be no need for
+ * ? 'selectEachItemCount' selector
+ */
 const initialState = {
   items: [],
 };
