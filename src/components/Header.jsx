@@ -25,7 +25,7 @@ const Header = () => {
   );
 
   return (
-    <Menu as="header">
+    <Menu as="header" fixed="top">
       <Menu.Item name="book-store">Book Store</Menu.Item>
       <Menu.Menu position="right">
         <Menu.Item name="total">
