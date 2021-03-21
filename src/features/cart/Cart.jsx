@@ -1,35 +1,56 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Button, Icon, Image, List } from 'semantic-ui-react';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Label, List, Menu, Popup } from 'semantic-ui-react';
+import CartItem from './CartItem';
+import {
+  removeItem,
+  selectCartItemsCount,
+  selectEachItemCount,
+  selectUniqueCartItems,
+} from './cartSlice';
 
-const Cart = ({ id, title, price, image, countInCart, onRemoveFromCart }) => (
-  <List divided verticalAlign="middle">
-    <List.Item>
-      <List.Content floated="right">
-        <Button color="red" icon onClick={() => onRemoveFromCart(id)}>
-          <Icon name="remove" />
-        </Button>
-      </List.Content>
-      <Image avatar src={image} />
-      <List.Content>
-        <List.Header>{title}</List.Header>
-        <List.Description>
-          <b>
-            ${price} {countInCart > 1 && `(${countInCart})`}
-          </b>
-        </List.Description>
-      </List.Content>
-    </List.Item>
-  </List>
-);
+const Cart = () => {
+  const cartItemsCount = useSelector(selectCartItemsCount);
+  const uniqueCartItems = useSelector(selectUniqueCartItems);
+  const eachItemCount = useSelector(selectEachItemCount);
 
-Cart.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  countInCart: PropTypes.number.isRequired,
-  onRemoveFromCart: PropTypes.func.isRequired,
+  const dispatch = useDispatch();
+
+  const onRemoveFromCart = useCallback(
+    (id) => {
+      dispatch(removeItem(id));
+    },
+    [dispatch]
+  );
+
+  return (
+    <Popup
+      trigger={
+        <Menu.Item name="cart">
+          Cart
+          <Label color="blue" circular>
+            {cartItemsCount}
+          </Label>
+        </Menu.Item>
+      }
+      on="click"
+      hideOnScroll
+      wide="very"
+    >
+      <Popup.Content>
+        <List divided verticalAlign="middle" size="large">
+          {uniqueCartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              {...item}
+              countInCart={eachItemCount[item.id]}
+              onRemoveFromCart={onRemoveFromCart}
+            />
+          ))}
+        </List>
+      </Popup.Content>
+    </Popup>
+  );
 };
 
-export default React.memo(Cart);
+export default Cart;

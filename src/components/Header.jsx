@@ -1,28 +1,11 @@
-import React, { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Menu, Popup } from 'semantic-ui-react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Menu } from 'semantic-ui-react';
 import Cart from '../features/cart/Cart';
-import {
-  removeItem,
-  selectCartItemsCount,
-  selectEachItemCount,
-  selectTotal,
-  selectUniqueCartItems,
-} from '../features/cart/cartSlice';
+import { selectTotal } from '../features/cart/cartSlice';
 
 const Header = () => {
   const total = useSelector(selectTotal);
-  const uniqueCartItems = useSelector(selectUniqueCartItems);
-  const cartItemsCount = useSelector(selectCartItemsCount);
-  const eachItemCount = useSelector(selectEachItemCount);
-  const dispatch = useDispatch();
-
-  const onRemoveFromCart = useCallback(
-    (id) => {
-      dispatch(removeItem(id));
-    },
-    [dispatch]
-  );
 
   return (
     <Menu as="header" fixed="top">
@@ -32,23 +15,7 @@ const Header = () => {
           Total: $<b>{total}</b>
         </Menu.Item>
 
-        <Popup
-          trigger={<Menu.Item name="cart">Cart ({cartItemsCount})</Menu.Item>}
-          on="click"
-          hideOnScroll
-          wide="very"
-        >
-          <Popup.Content>
-            {uniqueCartItems.map((item) => (
-              <Cart
-                key={item.id}
-                {...item}
-                countInCart={eachItemCount[item.id]}
-                onRemoveFromCart={onRemoveFromCart}
-              />
-            ))}
-          </Popup.Content>
-        </Popup>
+        <Cart />
       </Menu.Menu>
     </Menu>
   );
