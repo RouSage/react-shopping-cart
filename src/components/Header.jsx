@@ -12,7 +12,7 @@ const Header = () => {
       <Menu.Item name="book-store">Book Store</Menu.Item>
       <Menu.Menu position="right">
         <Menu.Item name="total">
-          Total: $<b>{total}</b>
+          Total: $<b>{total.toFixed(2)}</b>
         </Menu.Item>
 
         <Cart />

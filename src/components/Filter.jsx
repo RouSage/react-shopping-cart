@@ -20,11 +20,6 @@ const Filter = () => {
         onClick={handleItemClick}
       />
       <Menu.Item
-        name={filterItems.author}
-        active={filterBy === filterItems.author}
-        onClick={handleItemClick}
-      />
-      <Menu.Item
         name={filterItems.price_desc}
         active={filterBy === filterItems.price_desc}
         onClick={handleItemClick}

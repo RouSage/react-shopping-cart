@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Card, Icon, Image } from 'semantic-ui-react';
 
 const BookCard = ({ book, countInCart, onAddToCart }) => {
-  const { title, author, price, image } = book;
+  const { title, subtitle, price, image } = book;
 
   return (
     <Card as="article" raised>
@@ -11,7 +11,7 @@ const BookCard = ({ book, countInCart, onAddToCart }) => {
       <Card.Content>
         <Card.Header as="h3">{title}</Card.Header>
         <Card.Meta>
-          <span className="author">{author}</span>
+          <span className="subtitle">{subtitle}</span>
         </Card.Meta>
       </Card.Content>
       <Card.Content extra as="footer">
@@ -34,7 +34,7 @@ const BookCard = ({ book, countInCart, onAddToCart }) => {
 BookCard.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string,
-    author: PropTypes.string,
+    subtitle: PropTypes.string,
     price: PropTypes.number,
     image: PropTypes.string,
   }).isRequired,

@@ -14,8 +14,15 @@ export const fetchBooks = createAsyncThunk(
       return false;
     }
 
-    const response = await axios.get('/books.json');
-    return response.data;
+    try {
+      const response = await axios.get('/books.json');
+
+      if (response.statusText === 'OK') {
+        return response.data;
+      }
+    } catch (error) {
+      console.log(error.response);
+    }
   }
 );
 
@@ -24,8 +31,6 @@ const filterBooksBy = (books, filterBy) => {
   switch (filterBy) {
     case filterItems.all:
       return orderBy(books, 'id', 'asc');
-    case filterItems.author:
-      return orderBy(books, 'author', 'asc');
     case filterItems.price_desc:
       return orderBy(books, 'price', 'desc');
     case filterItems.price_asc:

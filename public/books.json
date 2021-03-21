@@ -1,154 +1,135 @@
 [
     {
-        "id": 0,
-        "title": "Происхождение",
-        "author": "Дэн Браун",
-        "image": "https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/27624091-den-braun-proishozhdenie-27624091.jpg",
-        "price": 710,
-        "rating": 3
+        "title": "Learning React, 2nd Edition",
+        "subtitle": "A Hands-On Guide to Building Web Applications Using React and Redux",
+        "id": "9780134843551",
+        "price": 21.63,
+        "image": "https://itbook.store/img/books/9780134843551.png"
     },
     {
-        "id": 1,
-        "title": "1984",
-        "author": "Джордж Оруэлл",
-        "image": "https://cv0.litres.ru/sbc/09233908_cover_185-elektronnaya-kniga--.jpg",
-        "price": 415,
-        "rating": 5
+        "title": "Pro React",
+        "subtitle": "Build complex front-end applications in a composable way with React",
+        "id": "9781484212615",
+        "price": 13.77,
+        "image": "https://itbook.store/img/books/9781484212615.png"
     },
     {
-        "id": 2,
-        "title": "Девушка в тумане",
-        "author": "Донато Карризи",
-        "image": "https://cv2.litres.ru/sbc/31635724_cover_185-elektronnaya-kniga-donato-karrizi-devushka-v-tumane.jpg",
-        "price": 464,
-        "rating": 4
+        "title": "React Native for iOS Development",
+        "subtitle": "Harness the power of React and JavaScript to build stunning iOS applications",
+        "id": "9781484213964",
+        "price": 33.26,
+        "image": "https://itbook.store/img/books/9781484213964.png"
     },
     {
-        "id": 3,
-        "title": "Империя должна умереть",
-        "author": "Михаил Зыгарь",
-        "image": "https://cv0.litres.ru/sbc/30804904_cover_185-elektronnaya-kniga-mihail-zygar-imperiya-dolzhna-umeret.jpg",
-        "price": 741,
-        "rating": 3
+        "title": "Front-End Reactive Architectures",
+        "subtitle": "Explore the Future of the Front-End using Reactive JavaScript Frameworks and Libraries",
+        "id": "9781484231791",
+        "price": 26.32,
+        "image": "https://itbook.store/img/books/9781484231791.png"
     },
     {
-        "id": 4,
-        "title": "Земное притяжение",
-        "author": "Татьяна Устинова",
-        "image": "https://cv9.litres.ru/sbc/30087292_cover_185-elektronnaya-kniga-tatyana-ustinova-zemnoe-prityazhenie.jpg",
-        "price": 317,
-        "rating": 1
+        "title": "Practical React Native",
+        "subtitle": "Build Two Full Projects and One Full Game using React Native",
+        "id": "9781484239384",
+        "price": 26.09,
+        "image": "https://itbook.store/img/books/9781484239384.png"
     },
     {
-        "id": 5,
-        "title": "Зулейха открывает глаза",
-        "author": "Гузель Яхина",
-        "image": "https://cv5.litres.ru/sbc/17411250_cover_185-elektronnaya-kniga-guzel-yahina-zuleyha-otkryvaet-glaza-2.jpg",
-        "price": 254,
-        "rating": 0
+        "title": "Reactive Streams in Java",
+        "subtitle": "Concurrency with RxJava, Reactor, and Akka Streams",
+        "id": "9781484241752",
+        "price": 26.03,
+        "image": "https://itbook.store/img/books/9781484241752.png"
     },
     {
-        "id": 6,
-        "title": "Очаровательный кишечник. Как самый могущественный орган управляет нами",
-        "author": "Джулия Эндерс",
-        "image": "https://cv7.litres.ru/pub/c/elektronnaya-kniga/cover_120/12178377-dzhuliya-enders-ocharovatelnyy-kishechnik-kak-samyy-moguschestvennyy-organ-upravlyaet-nami-12178377.jpg",
-        "price": 573,
-        "rating": 4
+        "title": "Building React Apps with Server-Side Rendering",
+        "subtitle": "Use React, Redux, and Next to Build Full Server-Side Rendering Applications",
+        "id": "9781484258682",
+        "price": 27.75,
+        "image": "https://itbook.store/img/books/9781484258682.png"
     },
     {
-        "id": 7,
-        "title": "iPhuck 10",
-        "author": "Виктор Пелевин",
-        "image": "https://cv7.litres.ru/sbc/31221870_cover_185-elektronnaya-kniga-viktor-pelevin-iphuck-10-25564903.jpg",
-        "price": 246,
-        "rating": 0
+        "title": "Learning React",
+        "subtitle": "Functional Web Development with React and Redux",
+        "id": "9781491954621",
+        "price": 19.95,
+        "image": "https://itbook.store/img/books/9781491954621.png"
     },
     {
-        "id": 8,
-        "title": "7 навыков высокоэффективных людей: Мощные...",
-        "author": "Стивен Кови",
-        "image": "https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_415/4239285--.jpg",
-        "price": 347,
-        "rating": 5
+        "title": "React Quickly",
+        "subtitle": "Painless web apps with React, JSX, Redux, and GraphQL",
+        "id": "9781617293344",
+        "price": 36.99,
+        "image": "https://itbook.store/img/books/9781617293344.png"
     },
     {
-        "id": 9,
-        "title": "Девушка во льду",
-        "author": "Роберт Брындза",
-        "image": "https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover_415/27351732-robert-bryndza-12646976-devushka-vo-ldu.jpg",
-        "price": 882,
-        "rating": 2
+        "title": "Reactive Web Applications",
+        "subtitle": "Covers Play, Akka, and Reactive Streams",
+        "id": "9781633430099",
+        "price": 26.23,
+        "image": "https://itbook.store/img/books/9781633430099.png"
     },
     {
-        "id": 10,
-        "title": "Магия утра. Как первый час дня определяет ваш успех",
-        "author": "Хэл Элрод",
-        "image": "https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_415/19063017-hel-elrod-magiya-utra.jpg",
-        "price": 829,
-        "rating": 1
+        "title": "React.js Essentials",
+        "subtitle": "A fast-paced guide to designing and building scalable and maintainable web apps with React.js",
+        "id": "9781783551620",
+        "price": 28.50,
+        "image": "https://itbook.store/img/books/9781783551620.png"
     },
     {
-        "id": 11,
-        "title": "Азиатская европеизация. История Российского государства. Царь Петр...",
-        "author": "Борис Акунин",
-        "image": "https://cv3.litres.ru/sbc/31629439_cover_185-elektronnaya-kniga-boris-akunin-aziatskaya-evropeizaciya-istoriya-rossiyskogo-gosudarstva-car-petr-alekseevich.jpg",
-        "price": 389,
-        "rating": 2
+        "title": "Mastering React",
+        "subtitle": "Master the art of building modern web applications using React",
+        "id": "9781783558568",
+        "price": 44.99,
+        "image": "https://itbook.store/img/books/9781783558568.png"
     },
     {
-        "id": 12,
-        "title": "Ведьмак (сборник)",
-        "author": "Анджей Сапковский",
-        "image": "https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/6375365-andzhey-sapkovskiy-vedmak.jpg",
-        "price": 424,
-        "rating": 3
+        "title": "React Cookbook",
+        "subtitle": "Create dynamic web apps with React using Redux, Webpack, Node.js, and GraphQL",
+        "id": "9781783980727",
+        "price": 44.99,
+        "image": "https://itbook.store/img/books/9781783980727.png"
     },
     {
-        "id": 13,
-        "title": "Атлант расправил плечи",
-        "author": "Айн Рэнд",
-        "image": "https://cv7.litres.ru/pub/c/elektronnaya-kniga/cover_415/4236675-ayn-rend-atlant-raspravil-plechi.jpg",
-        "price": 157,
-        "rating": 2
+        "title": "Clojure Reactive Programming",
+        "subtitle": "Design and implement highly reusable reactive applications by integrating different frameworks with Clojure",
+        "id": "9781783986668",
+        "price": 29.99,
+        "image": "https://itbook.store/img/books/9781783986668.png"
     },
     {
-        "id": 14,
-        "title": "Цена вопроса. Том 1",
-        "author": "Александра Маринина",
-        "image": "https://cv6.litres.ru/sbc/33285466_cover_185-elektronnaya-kniga-aleksandra-marinina-cena-voprosa-tom-1-22638660.jpg",
-        "price": 664,
-        "rating": 0
+        "title": "ReactJS by Example: Building Modern Web Applications with React",
+        "subtitle": "Get up and running with ReactJS by developing five cutting-edge and responsive projects",
+        "id": "9781785289644",
+        "price": 34.99,
+        "image": "https://itbook.store/img/books/9781785289644.png"
     },
     {
-        "id": 15,
-        "title": "Исчезнувшая",
-        "author": "Гиллиан Флинн",
-        "image": "https://cv2.litres.ru/sbc/11029722_cover_185-elektronnaya-kniga-gillian-flinn-ischeznuvshaya.jpg",
-        "price": 476,
-        "rating": 4
+        "title": "Getting Started with React Native",
+        "subtitle": "Learn to build modern native iOS and Android applications using JavaScript and the incredible power of React",
+        "id": "9781785885181",
+        "price": 29.99,
+        "image": "https://itbook.store/img/books/9781785885181.png"
     },
     {
-        "id": 17,
-        "title": "Метро 2035",
-        "author": "Дмитрий Глуховский",
-        "image": "https://cv9.litres.ru/sbc/13698392_cover_185-elektronnaya-kniga-dmitriy-gluhovskiy-metro-2035.jpg",
-        "price": 837,
-        "rating": 4
+        "title": "React 16 Tooling",
+        "subtitle": "Master essential cutting-edge tools, such as create-react-app, Jest, and Flow",
+        "id": "9781788835015",
+        "price": 44.99,
+        "image": "https://itbook.store/img/books/9781788835015.png"
     },
     {
-        "id": 18,
-        "title": "Снеговик",
-        "author": "Ю Несбё",
-        "image": "https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/4578362-u-nesbe-snegovik-4578362.jpg",
-        "price": 796,
-        "rating": 5
+        "title": "Full-Stack React Projects",
+        "subtitle": "Modern web development using React 16, Node, Express, and MongoDB",
+        "id": "9781788835534",
+        "price": 44.99,
+        "image": "https://itbook.store/img/books/9781788835534.png"
     },
     {
-        "id": 19,
-        "title": "Как тренировать память. Не думайте о памяти – лучше используйте ее на все сто!",
-        "author": "Джонатан Хэнкок",
-        "image": "https://cv1.litres.ru/sbc/14195715_cover_185-elektronnaya-kniga-dzhonatan-henkok-kak-trenirovat-pamyat-ne-dumayte-o-pamyati-luchshe-ispolzuyte-ee-na-vse-sto.jpg",
-        "price": 399,
-        "rating": 5
+        "title": "Hands-On Reactive Programming with Reactor",
+        "subtitle": "Build reactive and scalable microservices using the Reactor framework",
+        "id": "9781789135794",
+        "price": 39.99,
+        "image": "https://itbook.store/img/books/9781789135794.png"
     }
 ]
