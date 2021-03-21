@@ -31,6 +31,8 @@ const filterBooksBy = (books, filterBy) => {
   switch (filterBy) {
     case filterItems.all:
       return orderBy(books, 'id', 'asc');
+    case filterItems.title:
+      return orderBy(books, 'title', 'asc');
     case filterItems.price_desc:
       return orderBy(books, 'price', 'desc');
     case filterItems.price_asc:

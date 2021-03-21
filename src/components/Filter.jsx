@@ -14,9 +14,15 @@ const Filter = () => {
 
   return (
     <Menu secondary stackable compact>
+      <Menu.Item header>Sort by:</Menu.Item>
       <Menu.Item
         name={filterItems.all}
         active={filterBy === filterItems.all}
+        onClick={handleItemClick}
+      />
+      <Menu.Item
+        name={filterItems.title}
+        active={filterBy === filterItems.title}
         onClick={handleItemClick}
       />
       <Menu.Item
