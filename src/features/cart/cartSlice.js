@@ -1,15 +1,6 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
+import uniqBy from 'lodash/uniqBy';
 
-/**
- * TODO: maybe would be better to change cart slice structure to:
- * * id: {
- * *   item: book
- * *   count: count
- * * }
- * ? Cart will contain only one book object (identified by id)
- * ? along with count property and there will be no need for
- * ? 'selectEachItemCount' selector
- */
 const initialState = {
   items: [],
 };
@@ -29,6 +20,9 @@ export const cartSlice = createSlice({
 
 // Selectors
 export const selectCartItems = (state) => state.cart.items;
+export const selectUniqueCartItems = createSelector(selectCartItems, (items) =>
+  uniqBy(items, (item) => item.id)
+);
 export const selectCartItemsCount = createSelector(
   selectCartItems,
   (items) => items.length

@@ -4,15 +4,17 @@ import { Menu, Popup } from 'semantic-ui-react';
 import Cart from '../features/cart/Cart';
 import {
   removeItem,
-  selectCartItems,
   selectCartItemsCount,
+  selectEachItemCount,
   selectTotal,
+  selectUniqueCartItems,
 } from '../features/cart/cartSlice';
 
 const Header = () => {
   const total = useSelector(selectTotal);
-  const cartItems = useSelector(selectCartItems);
+  const uniqueCartItems = useSelector(selectUniqueCartItems);
   const cartItemsCount = useSelector(selectCartItemsCount);
+  const eachItemCount = useSelector(selectEachItemCount);
   const dispatch = useDispatch();
 
   const onRemoveFromCart = useCallback(
@@ -37,10 +39,11 @@ const Header = () => {
           wide="very"
         >
           <Popup.Content>
-            {cartItems.map((item) => (
+            {uniqueCartItems.map((item) => (
               <Cart
                 key={item.id}
                 {...item}
+                countInCart={eachItemCount[item.id]}
                 onRemoveFromCart={onRemoveFromCart}
               />
             ))}
