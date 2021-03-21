@@ -5,7 +5,8 @@
   "description": "A small shopping cart SPA built with React and Redux",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -55,6 +56,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.26.1",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   }
 }
