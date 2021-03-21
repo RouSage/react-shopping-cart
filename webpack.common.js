@@ -4,7 +4,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
   module: {
     rules: [
       {
@@ -38,13 +37,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/',
     filename: 'bundle.js',
-  },
-  devtool: 'eval-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: '/',
-    hot: true,
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
