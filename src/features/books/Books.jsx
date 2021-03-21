@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card } from 'semantic-ui-react';
+import { Card, Loader } from 'semantic-ui-react';
 import { addItem, selectEachItemCount } from '../cart/cartSlice';
 import BookCard from './BookCard';
 import { fetchBooks, selectBooks } from './booksSlice';
@@ -24,7 +24,9 @@ const Books = () => {
   return (
     <Card.Group centered as="section">
       {isLoading ? (
-        <p>Loading</p>
+        <Loader active={isLoading} inline="centered" size="big">
+          Loading books...
+        </Loader>
       ) : (
         books.map((book) => (
           <BookCard
