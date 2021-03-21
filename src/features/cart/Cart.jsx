@@ -15,7 +15,7 @@ const Cart = ({ id, title, price, image, countInCart, onRemoveFromCart }) => (
         <List.Header>{title}</List.Header>
         <List.Description>
           <b>
-            ${price} {countInCart > 0 && `(${countInCart})`}
+            ${price} {countInCart > 1 && `(${countInCart})`}
           </b>
         </List.Description>
       </List.Content>
