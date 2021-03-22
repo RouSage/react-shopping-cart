@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import orderBy from 'lodash/orderBy';
-import { filterItems } from '../../app/config';
+import { API_BASE_URL, filterItems } from '../../app/config';
 
 // Create the thunk to fetch books via API asynchronously
 // Used as 'extraReducers' in books reducer
 export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
-  async (_arg, { getState, requestId }) => {
+  async (_arg, { getState, rejectWithValue, requestId }) => {
     const { currentRequestId, isLoading } = getState().books;
 
     if (!isLoading || requestId !== currentRequestId) {
@@ -15,13 +15,27 @@ export const fetchBooks = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get('/books.json');
+      const response = await axios.get(API_BASE_URL + process.env.API_BIN_ID, {
+        method: 'GET',
+        headers: {
+          'X-Master-Key': process.env.API_KEY,
+        },
+      });
 
-      if (response.statusText === 'OK') {
-        return response.data;
+      if (response.status === 200) {
+        return response.data.record;
+      }
+
+      // Check if there's some error message
+      // and set error property to some error message
+      if (response.data.message) {
+        return rejectWithValue(response.data);
       }
     } catch (error) {
-      console.log(error.response);
+      if (!error.response) {
+        throw error;
+      }
+      return rejectWithValue(error.response.data);
     }
   }
 );
@@ -86,8 +100,8 @@ export const booksSlice = createSlice({
 
       if (state.isLoading && state.currentRequestId === requestId) {
         state.isLoading = false;
-        state.error = action.error;
         state.currentRequestId = undefined;
+        state.error = action.payload ? action.payload : action.error.message;
       }
     },
   },
