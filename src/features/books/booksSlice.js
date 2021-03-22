@@ -22,8 +22,6 @@ export const fetchBooks = createAsyncThunk(
         },
       });
 
-      console.log(response);
-
       if (response.status === 200) {
         return response.data.record;
       }
