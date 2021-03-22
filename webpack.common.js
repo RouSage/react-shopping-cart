@@ -47,7 +47,7 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
     }),
     new ESLintPlugin({ extensions: ['js', 'jsx'] }),
-    new Dotenv(),
+    new Dotenv({ ignoreStub: true }),
     new CopyPlugin({
       patterns: [
         {
