@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -46,6 +47,7 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
     }),
     new ESLintPlugin({ extensions: ['js', 'jsx'] }),
+    new Dotenv(),
     new CopyPlugin({
       patterns: [
         {
