@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import { Button, Card, Icon, Image } from 'semantic-ui-react';
 
 const BookCard = ({ book, countInCart, onAddToCart }) => {
@@ -7,7 +8,16 @@ const BookCard = ({ book, countInCart, onAddToCart }) => {
 
   return (
     <Card as="article" raised>
-      <Image src={image} wrapped ui={false} alt={title} />
+      <LazyLoad height={338} once offset={100}>
+        <Image
+          src={image}
+          wrapped
+          ui={false}
+          alt={title}
+          width="290"
+          height="338"
+        />
+      </LazyLoad>
       <Card.Content>
         <Card.Header as="h3">{title}</Card.Header>
         <Card.Meta>
