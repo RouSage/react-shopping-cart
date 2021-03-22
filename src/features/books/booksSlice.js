@@ -15,12 +15,15 @@ export const fetchBooks = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get(API_BASE_URL + process.env.API_BIN_ID, {
-        method: 'GET',
-        headers: {
-          'X-Master-Key': process.env.API_KEY,
-        },
-      });
+      const response = await axios.get(
+        API_BASE_URL + process.env.API_BIN_ID + '/latest',
+        {
+          method: 'GET',
+          headers: {
+            'X-Master-Key': process.env.API_KEY,
+          },
+        }
+      );
 
       if (response.status === 200) {
         return response.data.record;
